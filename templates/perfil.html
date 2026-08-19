@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="card card-perfil">
+        <div class="avatar">
+            <!-- Letra inicial do nome do usuário em caixa alta -->
+            {{ usuario[0].upper() }}
+        </div>
+        <h2>Bem-vindo, {{ usuario }}!</h2>
+        <p class="subtitle">Status da conta: Ativo e Verificado</p>
+
+        <div class="profile-details">
+            <div class="detail-item">
+                <strong>Nível de Acesso:</strong> <span>Administrador</span>
+            </div>
+            <div class="detail-item">
+                <strong>Permissões:</strong> <span>Acesso Total</span>
+            </div>
+        </div>
+
+        <a href="{{ url_for('logout') }}" class="btn-logout">Sair da Conta</a>
+    </div>
+</body>
+</html>
